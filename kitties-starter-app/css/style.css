@@ -1,20 +1,39 @@
 /*@import a Google Font here!*/
 
 body {
+	background-image: url("../images/background.png");
 
 }
 
 #container {
-
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-top: 10px
 }
 
 .dashed {
+	border: 3px dashed pink;
+	border-radius: 15px;
+}
 
+.left-container {
+	float: left;
+}
+
+.right-container {
+	float: right;
 }
 
 .left-container, .right-container {
-
+	border: 3px solid lightblue;
+	padding: 0 5px;
+	border-radius: 10px;
+	text-align: center;
+	width: 48%;
+	background-color: white;
 }
+
+
 h1 {
 	
 }

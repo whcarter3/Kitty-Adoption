@@ -1,10 +1,19 @@
-[
+angular
+	.module('kittyApp')
+	.controller('KittyController', KittyController);
+
+function KittyController () {
+
+	this.adoptTheseCats = adoptTheseCats;
+	this.cantHaveTheseCats = cantHaveTheseCats;
+
+	this.kittyPen =	[
 		{
 			catName: 'Karl',
 			monthsOld: 5,
 			gender: 'boy',
 			image: "images/carl.png",
-			adopted: true,
+			adopted: false
 		},
 		{
 			catName: 'Jack',
@@ -29,3 +38,12 @@
 		}
 
 	]
+
+	function adoptTheseCats () {
+		return this.kittyPen.filter(function(x) {return x.adopted === false;})
+	}
+
+	function cantHaveTheseCats () {
+		return this.kittyPen.filter(function(x) {return x.adopted === true;})
+	}
+};

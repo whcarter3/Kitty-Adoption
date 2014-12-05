@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html ng-app>
+<html ng-app="kittyApp">
 	<head>
 		<meta charset="utf-8">
 
-		<title>An HTML Page</title>
+		<title>Kitty Adoption</title>
 
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
@@ -14,9 +14,34 @@
 		<link rel="stylesheet" href="css/style.css">
 		
 		<script src="js/angular.js"></script>
-		<script src="js/app.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/KittiesController.js"></script>
 	</head>
 
-	<body>
+	<body ng-controller="KittyController as kitty">
+		<main>
+			<div id="container">
+				<div class="left-container">
+					<h1>Kitties For Adoption</h1>
+					<div class="dashed" ng-repeat="cat in kitty.adoptTheseCats()">
+						<h2>{{cat.catName}}</h2>
+						<p>I am {{cat.monthsOld}}</p>
+						<p>I am a {{cat.gender}}</p>
+						<img src="{{cat.image}}"><br>
+						Adopt? <input class="checkbox" type="checkbox" ng-model="cat.adopted"></input>
+					</div>
+				</div>
+				<div class="right-container" ng-repeat:"cat in kitty.cantHaveTheseCats()">
+					<h1>You Can't Have These Kitties</h1>
+					<div class="dashed">
+						<h2>{{cat.catName}}</h2>
+						<p>I am {{cat.monthsOld}}</p>
+						<p>I am a {{cat.gender}}</p>
+						<img src="{{cat.image}}"><br>
+						Adopt? <input class="checkbox" type="checkbox" ng-model="cat.adopted"></input>
+					</div>
+				</div>
+			</div>
+		</main>
 	</body>
 </html>
