@@ -1,4 +1,6 @@
 /*@import a Google Font here!*/
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
 
 body {
 	background-image: url("../images/background.png");
@@ -13,7 +15,9 @@ body {
 
 .dashed {
 	border: 3px dashed pink;
-	border-radius: 15px;
+	border-radius: 20px;
+	margin: 10px 8px;
+	padding-bottom: 5px;
 }
 
 .left-container {
@@ -35,5 +39,14 @@ body {
 
 
 h1 {
-	
+	font-family: 'Pacifico', cursive;
+	text-shadow: 1px 1px 5px #555;
+}
+
+h2 {
+	font-family: 'Comfortaa', cursive;
+}
+
+p {
+	font-family: 'Comfortaa', cursive;
 }

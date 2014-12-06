@@ -23,24 +23,24 @@
 			<div id="container">
 				<div class="left-container">
 					<h1>Kitties For Adoption</h1>
-					<div class="dashed" ng-repeat="cat in kitty.adoptTheseCats()">
+					<div class="dashed" ng-repeat="cat in kitty.kittyPen | filter:{adopted: false}">
 						<h2>{{cat.catName}}</h2>
-						<p>I am {{cat.monthsOld}}</p>
-						<p>I am a {{cat.gender}}</p>
+						<p>I am {{cat.monthsOld}} months old.</p>
+						<p>I am a {{cat.gender}}.</p>
 						<img src="{{cat.image}}"><br>
-						Adopt? <input class="checkbox" type="checkbox" ng-model="cat.adopted"></input>
+						<p>Adopt? <input class="checkbox" type="checkbox" ng-model="cat.adopted"></input></p>
 					</div>
-				</div>
-				<div class="right-container" ng-repeat:"cat in kitty.cantHaveTheseCats()">
+				</div><div class="right-container">
 					<h1>You Can't Have These Kitties</h1>
-					<div class="dashed">
+					<div class="dashed" ng-repeat="cat in kitty.kittyPen | filter:{adopted: true}">
 						<h2>{{cat.catName}}</h2>
 						<p>I am {{cat.monthsOld}}</p>
 						<p>I am a {{cat.gender}}</p>
 						<img src="{{cat.image}}"><br>
-						Adopt? <input class="checkbox" type="checkbox" ng-model="cat.adopted"></input>
+						<p>Adopt? <input class="checkbox" type="checkbox" ng-model="cat.adopted"></input></p>
 					</div>
 				</div>
+				
 			</div>
 		</main>
 	</body>
